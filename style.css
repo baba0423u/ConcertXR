@@ -1,0 +1,294 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('assets/glass.png') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px;
+  max-width: 800px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #fff;
+  animation: fadeUp 2s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes fadeUp {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.5; transform: translateY(6px); }
+}
+
+
+
+/* Intro Section */
+.intro {
+  background-color: #000;
+  padding: 80px 20px;
+}
+
+.intro-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-image img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.intro-text {
+  max-width: 600px;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+
+
+
+/* Showcase Section */
+.showcase {
+  padding: 80px 20px;
+  background-color: #111;
+  text-align: center;
+}
+
+.showcase h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.showcase-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Keywords Section */
+.keywords {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 60px 20px;
+  background-color: #000;
+}
+
+.keyword {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: 1px solid #00faff;
+  border-radius: 30px;
+  color: #00faff;
+  transition: background 0.3s;
+}
+
+.keyword:hover {
+  background-color: #00faff;
+  color: #000;
+}
+
+/* Call to Action */
+.cta {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #111;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 14px 32px;
+  font-size: 1rem;
+  background-color: #00faff;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 250, 255, 0.3);
+}
+
+
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#toTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+
+  background-color: #a855f7; /* 네온 보라색 */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); /* 네온 효과 */
+}
+
+#toTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#toTop:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.9); /* 호버 시 네온 강조 */
+}
+
+
+#experiencePrompt {
+  position: fixed;
+  bottom: 120px;
+  right: 60px;
+  font-size: 1.05rem;
+  color: #fff;
+  background: linear-gradient(135deg, #a855f7, #7c3aed); /* 네온 보라 그라데이션 */
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow:
+    0 0 10px rgba(168, 85, 247, 0.6),
+    0 0 20px rgba(168, 85, 247, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: pulseGradient 2s infinite ease-in-out;
+}
+
+#experiencePrompt.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulseGradient {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(168, 85, 247, 0.6),
+      0 0 20px rgba(168, 85, 247, 0.3),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow:
+      0 0 14px rgba(168, 85, 247, 0.9),
+      0 0 28px rgba(168, 85, 247, 0.5),
+      inset 0 0 12px rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+  }
+}

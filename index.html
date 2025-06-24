@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>미래 공연 XR 디자인</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>미래 공연 XR 디자인</h1>
+      <p>몰입, 확장, 새로운 공연의 미래</p>
+    </div>
+    <div class="scroll-indicator">
+      <div class="circle">
+        <div class="arrow">↓</div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Intro Section -->
+<section class="intro fade-in">
+  <div class="intro-inner">
+    <div class="intro-image">
+      <img src="assets/concert.png" alt="XR 공연을 즐기는 관객">
+    </div>
+    <div class="intro-text">
+      <h2>XR 글래스를 통해 즐기는 공연</h2>
+      <p>
+        XR 글래스를 통해 공연을 즐기는 미래가 온다면 어떻게 될까요?<br>
+        이 프로젝트는 현실 공간과 디지털 정보를 결합해,<br>
+        공연의 몰입도를 높이고 관람의 방식 자체를 확장하는 공연 디자인 실험입니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Showcase Section -->
+  <section class="showcase">
+    <h2>사용 장면 미리보기</h2>
+    <div class="showcase-gallery">
+      <img src="assets/demo1.jpg" alt="시연 이미지 1">
+      <img src="assets/demo2.jpg" alt="시연 이미지 2">
+      <img src="assets/demo3.jpg" alt="시연 이미지 3">
+    </div>
+  </section>
+
+  <!-- Keywords Section -->
+  <section class="keywords">
+    <div class="keyword">#몰입</div>
+    <div class="keyword">#생체 데이터 시각화</div>
+    <div class="keyword">#사용자 맞춤</div>
+    <div class="keyword">#미래형 공연 경험</div>
+  </section>
+
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+  <button id="toTop" title="맨 위로 이동">↑</button>
+  <div id="experiencePrompt">
+    👉 <span>아이패드로 직접 체험해보세요!</span>
+  </div>
+
+  <script>
+    // 스크롤 시 버튼 표시
+    const toTopButton = document.getElementById("toTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        toTopButton.classList.add("show");
+      } else {
+        toTopButton.classList.remove("show");
+      }
+    });
+
+    // 클릭 시 맨 위로 스크롤
+    toTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+
+  <script>
+    const prompt = document.getElementById('experiencePrompt');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        prompt.classList.add('show');
+      } else {
+        prompt.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>

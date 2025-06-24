@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+}
+
+header {
+  background-color: #000;
+  padding: 80px 20px 60px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.header-flex img {
+  width: 300px;           /* 고정 너비 */
+  max-width: 100%;        /* 부모보다 넘지 않도록 */
+  height: auto;           /* 비율 유지 */
+  object-fit: contain;    /* 혹시 모를 찌그러짐 방지 */
+  flex-shrink: 0;
+  display: block;         /* inline 속성 제거 */
+}
+
+.header-text {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: left;
+}
+
+body {
+  background-color: red !important;
+}
