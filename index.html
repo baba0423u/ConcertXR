@@ -41,22 +41,42 @@
 </section>
 
 
-  <!-- Showcase Section -->
-  <section class="showcase">
-    <h2>사용 장면 미리보기</h2>
-    <div class="showcase-gallery">
-      <img src="assets/demo1.jpg" alt="시연 이미지 1">
-      <img src="assets/demo2.jpg" alt="시연 이미지 2">
-      <img src="assets/demo3.jpg" alt="시연 이미지 3">
+  <!-- Journey Section -->
+  <section class="journey">
+    <div class="journey-block">
+      <h2>공연 전: 설렘을 높이다</h2>
+      <p>공연장 도착 전, 실시간 안내와 시야 체험으로 공연 관람을 준비합니다</p>
+      <div class="journey-images">
+        <img src="assets/scene2.png" alt="공연 전 UI 2" />
+        <img src="assets/scene3.png" alt="공연 전 UI 2" />
+      </div>
+    </div>
+
+    <div class="journey-block">
+      <h2>공연 중: 몰입을 이끌다</h2>
+      <p>내 눈앞에 필요한 정보를 띄워 무대에 몰입합니다</p>
+      <div class="journey-images">
+        <img src="assets/scene4.png" alt="공연 중 UI 1" />
+        <img src="assets/scene5.png" alt="공연 중 UI 2" />
+      </div>
+    </div>
+
+    <div class="journey-block">
+      <h2>공연 후: 기억을 되살리다</h2>
+      <p>공연 후 자동 기록된 내 반응 데이터와 하이라이트 클립을 통해 기억을 저장합니다</p>
+      <div class="journey-images">
+        <img src="assets/scene6.png" alt="공연 후 UI 1" />
+        <img src="assets/scene7.png" alt="공연 후 UI 2" />
+      </div>
     </div>
   </section>
 
-  <!-- Keywords Section -->
-  <section class="keywords">
-    <div class="keyword">#몰입</div>
-    <div class="keyword">#생체 데이터 시각화</div>
-    <div class="keyword">#사용자 맞춤</div>
-    <div class="keyword">#미래형 공연 경험</div>
+  <!-- Ending Section -->
+  <section class="ending">
+    <div class="ending-overlay">
+      <h2>당신의 감정을 울리는 새로운 공연의 시대</h2>
+      <p>지금, 미래 공연의 세계로 들어가보세요.</p>
+    </div>
   </section>
 
 
@@ -78,22 +98,33 @@
 
   <button id="toTop" title="맨 위로 이동">↑</button>
   <div id="experiencePrompt">
-    👉 <span>아이패드로 직접 체험해보세요!</span>
+    👈 <span>노트북으로 직접 체험해보세요!</span>
   </div>
 
   <script>
-    // 스크롤 시 버튼 표시
     const toTopButton = document.getElementById("toTop");
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      // 버튼 표시 여부
+      if (scrollTop > 200) {
         toTopButton.classList.add("show");
       } else {
         toTopButton.classList.remove("show");
       }
+
+      // 맨 아래 근처에서 버튼 위치 가운데로 이동
+      if (scrollTop + windowHeight >= docHeight - 100) {
+        toTopButton.classList.add("centered");
+      } else {
+        toTopButton.classList.remove("centered");
+      }
     });
 
-    // 클릭 시 맨 위로 스크롤
+    // 클릭 시 맨 위로
     toTopButton.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });

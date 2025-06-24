@@ -36,7 +36,7 @@ img {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,1));
   z-index: 1;
 }
 
@@ -98,7 +98,7 @@ img {
 
 /* Intro Section */
 .intro {
-  background-color: #000;
+  background-color: #1a1a1a; /* 밝은 검정으로 살짝 대비 */
   padding: 80px 20px;
 }
 
@@ -132,76 +132,83 @@ img {
 
 
 
-
-/* Showcase Section */
-.showcase {
-  padding: 80px 20px;
-  background-color: #111;
-  text-align: center;
-}
-
-.showcase h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.showcase-gallery {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Keywords Section */
-.keywords {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 60px 20px;
+/* Journey Section */
+.journey {
   background-color: #000;
+  padding: 80px 20px;
+  color: #fff;
 }
 
-.keyword {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border: 1px solid #00faff;
-  border-radius: 30px;
-  color: #00faff;
-  transition: background 0.3s;
-}
-
-.keyword:hover {
-  background-color: #00faff;
-  color: #000;
-}
-
-/* Call to Action */
-.cta {
+.journey-block {
+  max-width: 1000px;
+  margin: 0 auto 80px;
   text-align: center;
-  padding: 100px 20px;
-  background-color: #111;
 }
 
-.cta h2 {
+.journey-block h2 {
   font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.journey-block p {
+  font-size: 1.1rem;
+  color: #ccc;
   margin-bottom: 30px;
 }
 
-.cta-button {
-  padding: 14px 32px;
-  font-size: 1rem;
-  background-color: #00faff;
-  color: #000;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.journey-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.cta-button:hover {
+.journey-images img {
+  max-width: 300px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.journey-images img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 250, 255, 0.3);
+}
+
+.ending {
+  position: relative;
+  background: url('assets/scene1.png') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.ending::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.ending h2,
+.ending p {
+  position: relative;
+  z-index: 2;
+}
+
+.ending h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.ending p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
 
@@ -220,23 +227,25 @@ img {
 
 #toTop {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  right: 30px;
+  bottom: 30px;
   z-index: 1000;
-
-  background-color: #a855f7; /* 네온 보라색 */
-  color: #fff;
+  font-size: 24px;
+  background: #c084fc;
+  color: #000;
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 1.5rem;
+  padding: 16px 20px;
   cursor: pointer;
-
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6); /* 네온 효과 */
+  transition: opacity 0.3s ease, transform 0.4s ease, left 0.4s ease, right 0.4s ease;
+}
+
+/* 가운데 정렬 시 */
+#toTop.centered {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
 }
 
 #toTop.show {
@@ -249,26 +258,26 @@ img {
   box-shadow: 0 0 24px rgba(168, 85, 247, 0.9); /* 호버 시 네온 강조 */
 }
 
-
 #experiencePrompt {
   position: fixed;
   bottom: 120px;
-  right: 60px;
+  left: 60px;
   font-size: 1.05rem;
   color: #fff;
-  background: linear-gradient(135deg, #a855f7, #7c3aed); /* 네온 보라 그라데이션 */
-  padding: 12px 20px;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa); /* 네온 보라 그라데이션 */
+  padding: 12px 24px;
   border-radius: 30px;
   font-weight: bold;
   box-shadow:
-    0 0 10px rgba(168, 85, 247, 0.6),
-    0 0 20px rgba(168, 85, 247, 0.3),
+    0 0 10px rgba(139, 92, 246, 0.6),
+    0 0 20px rgba(139, 92, 246, 0.3),
     inset 0 0 10px rgba(255, 255, 255, 0.1);
   z-index: 999;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   animation: pulseGradient 2s infinite ease-in-out;
+  white-space: nowrap;
 }
 
 #experiencePrompt.show {
@@ -279,15 +288,15 @@ img {
 @keyframes pulseGradient {
   0%, 100% {
     box-shadow:
-      0 0 10px rgba(168, 85, 247, 0.6),
-      0 0 20px rgba(168, 85, 247, 0.3),
+      0 0 10px rgba(139, 92, 246, 0.6),
+      0 0 20px rgba(139, 92, 246, 0.3),
       inset 0 0 10px rgba(255, 255, 255, 0.1);
     transform: translateY(0);
   }
   50% {
     box-shadow:
-      0 0 14px rgba(168, 85, 247, 0.9),
-      0 0 28px rgba(168, 85, 247, 0.5),
+      0 0 14px rgba(139, 92, 246, 0.9),
+      0 0 28px rgba(139, 92, 246, 0.5),
       inset 0 0 12px rgba(255, 255, 255, 0.2);
     transform: translateY(-4px);
   }
