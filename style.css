@@ -230,15 +230,20 @@ img {
   right: 30px;
   bottom: 30px;
   z-index: 1000;
-  font-size: 24px;
+  width: 60px;
+  height: 60px;
   background: #c084fc;
   color: #000;
   border: none;
   border-radius: 50%;
-  padding: 16px 20px;
+  font-size: 24px;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.4s ease, left 0.4s ease, right 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* 불필요한 여백 제거 */
 }
 
 /* 가운데 정렬 시 */
@@ -247,6 +252,7 @@ img {
   right: auto;
   transform: translateX(-50%);
 }
+
 
 #toTop.show {
   opacity: 1;
